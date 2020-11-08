@@ -13,9 +13,12 @@ import webDriver.WebDriverManager;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
 public class TestUI {
     private WebDriver webDriver;
+
 
     @BeforeClass(groups = {"UITest"})
     public void setUp(){
@@ -25,7 +28,8 @@ public class TestUI {
 
 
     @Test (priority = 1, groups = {"UITest"})
-    public void authenticationInTrello() throws InterruptedException, IOException {
+    public void authenticationInTrello() throws IOException {
+        System.out.println("Выполненяется аутентификация");
         webDriver.get("https://trello.com/login");
         WebElement webElement = webDriver.findElement(By.xpath("//*[@id='user']"));
         webElement.click();
@@ -41,15 +45,11 @@ public class TestUI {
         System.getProperties().load(ClassLoader.getSystemResourceAsStream("pass.properties"));
         webElement2.sendKeys(System.getProperty("ui.pass"));
         webDriver.findElement(By.xpath("//*[@id = 'login-submit']//span//span//span")).click();
-
+        System.out.println("Аутентификация пройдена");
     }
 
     @Test (priority = 2, groups = {"UITest"})
     public void checkCardInColumn() throws InterruptedException {
-//        webDriver.findElement(By.xpath("//div[@class = 'content-all-boards']//div[@title = 'KanbanTool']")).click();
-
-//        WebDriverWait webDriverWait = new WebDriverWait(webDriver, 10);
-//        webDriverWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@title = 'KanbanTool']")));
 
         Thread.sleep(3000);
         webDriver.findElement(By.xpath("//div[@title = 'KanbanTool']")).click();
