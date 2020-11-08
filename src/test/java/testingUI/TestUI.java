@@ -23,13 +23,13 @@ public class TestUI {
     @BeforeClass(groups = {"UITest"})
     public void setUp(){
         webDriver = WebDriverManager.getDriver();
-        System.out.println("Начался выполняться UI тест");
+        System.out.println("Начал выполняться UI тест");
     }
 
 
     @Test (priority = 1, groups = {"UITest"})
     public void authenticationInTrello() throws IOException {
-        System.out.println("Выполненяется аутентификация");
+        System.out.println("Выполняется аутентификация");
         webDriver.get("https://trello.com/login");
         WebElement webElement = webDriver.findElement(By.xpath("//*[@id='user']"));
         webElement.click();
@@ -59,7 +59,7 @@ public class TestUI {
 
     @Test(priority = 3, groups = {"UITest"})
     public void checkCheckBoxes(){
-        System.out.println("Ghjdthrf dsgjkytybz xtr,jrcjd");
+        System.out.println("Проверка выполнения чекбоксев");
         WebDriverWait webDriverWait = new WebDriverWait(webDriver, 10);
         webDriverWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class= 'list-cards u-fancy-scrollbar u-clearfix js-list-cards js-sortable ui-sortable']/a")));
         webDriver.findElement(By.xpath("//div[@class= 'list-cards u-fancy-scrollbar u-clearfix js-list-cards js-sortable ui-sortable']/a")).click();
