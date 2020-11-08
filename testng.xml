@@ -1,0 +1,16 @@
+<test name="Regression1">
+    <groups>
+        <run>
+            <include name="TestAPI"  />
+            <include name="UITest"  />
+            <include name="refresh"  />
+        </run>
+    </groups>
+
+    <classes>
+        <class name="testingAPI.TestAPI" />
+        <class name="testingUI.TestUI" />
+        <class name="testingUI.TestUIRefreshClass" />
+
+    </classes>
+</test>
