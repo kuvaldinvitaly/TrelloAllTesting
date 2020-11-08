@@ -45,12 +45,13 @@ public class TestUI {
     }
 
     @Test (priority = 2, groups = {"UITest"})
-    public void checkCardInColumn(){
+    public void checkCardInColumn() throws InterruptedException {
 //        webDriver.findElement(By.xpath("//div[@class = 'content-all-boards']//div[@title = 'KanbanTool']")).click();
 
-        WebDriverWait webDriverWait = new WebDriverWait(webDriver, 10);
-        webDriverWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@title = 'KanbanTool']")));
+//        WebDriverWait webDriverWait = new WebDriverWait(webDriver, 10);
+//        webDriverWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@title = 'KanbanTool']")));
 
+        Thread.sleep(3000);
         webDriver.findElement(By.xpath("//div[@title = 'KanbanTool']")).click();
         WebElement webElement = webDriver.findElement(By.xpath("//div[@id= 'content']//textarea[text()='Done']/../..//span[text()='Карточка для изучения API']"));
         Assert.assertNotNull(webElement, "Карточка не находится в колонке Done");
