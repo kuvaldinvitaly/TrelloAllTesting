@@ -50,7 +50,7 @@ public class TestUI {
 
     @Test (priority = 2, groups = {"UITest"})
     public void checkCardInColumn() throws InterruptedException {
-
+        System.out.println("Проверка нахождения карточки в колонке Done");
         Thread.sleep(3000);
         webDriver.findElement(By.xpath("//div[@title = 'KanbanTool']")).click();
         WebElement webElement = webDriver.findElement(By.xpath("//div[@id= 'content']//textarea[text()='Done']/../..//span[text()='Карточка для изучения API']"));
@@ -59,6 +59,7 @@ public class TestUI {
 
     @Test(priority = 3, groups = {"UITest"})
     public void checkCheckBoxes(){
+        System.out.println("Ghjdthrf dsgjkytybz xtr,jrcjd");
         WebDriverWait webDriverWait = new WebDriverWait(webDriver, 10);
         webDriverWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class= 'list-cards u-fancy-scrollbar u-clearfix js-list-cards js-sortable ui-sortable']/a")));
         webDriver.findElement(By.xpath("//div[@class= 'list-cards u-fancy-scrollbar u-clearfix js-list-cards js-sortable ui-sortable']/a")).click();
@@ -71,6 +72,7 @@ public class TestUI {
 
     @Test(priority = 4, groups = "UITest")
     public void updateColorCoverToGreen(){
+        System.out.println("Постановка обложки зеленым цветом");
         webDriver.findElement(By.xpath("//div[@class = 'window-cover-menu']/a")).click();
         webDriver.findElement(By.xpath("//div[@class = 'js-react-root']//div//button[@class = '_9HlyjDStZT9Tkt _VjutK-Uakd6Op']")).click();
         webDriver.findElement(By.xpath("//div[@class = 'pop-over-header js-pop-over-header']//a")).click();
@@ -79,12 +81,14 @@ public class TestUI {
 
     @Test(priority = 5, groups = "UITest")
     public void doneJobOnTime(){
+        System.out.println("Отметить, что задача выполнена в срок ");
         webDriver.findElement(By.xpath("//div[@class = 'card-detail-item js-card-detail-due-date']//div/a")).click();
         webDriver.findElement(By.xpath("//div[@class = 'window-overlay']//div//div//a")).click();
     }
 
     @Test(priority = 6, groups = "UITest")
     public void updateColorBoardToGreen(){
+        System.out.println("Сменить фон доски на зеленый");
 //        webDriver.findElement(By.xpath("//span[text() = 'Меню']")).click();
         webDriver.findElement(By.xpath("//div[@class = 'board-menu-content-frame']//li[@class = 'board-menu-navigation-item mod-background']//a")).click();
         webDriver.findElement(By.xpath("//div[@class = 'board-backgrounds-section-tile board-backgrounds-colors-tile js-bg-colors']//div[text() = 'Цвета']")).click();
@@ -94,6 +98,7 @@ public class TestUI {
 
     @Test(priority = 7, groups = "UITest")
     public void updateBoardNameAndType() throws InterruptedException {
+        System.out.println("Сделать доску командной с типом образование");
         webDriver.findElement(By.xpath("//span[@class= 'board-header-btn-icon icon-sm icon-private']")).click();
         WebDriverWait webDriverWait = new WebDriverWait(webDriver, 10);
         webDriverWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//a[text()= 'Командная ']")));
@@ -112,6 +117,7 @@ public class TestUI {
 
     @Test(priority = 8, groups = "UITest")
     public void changeBoardName(){
+        System.out.println("Поменять имя доски");
         webDriver.findElement(By.xpath("//div[@title = 'KanbanTool']")).click();
         webDriver.findElement(By.xpath("//div[@class = 'board-header-btn mod-board-name inline-rename-board js-rename-board']/h1")).click();
 
