@@ -116,8 +116,9 @@ public class TestUI {
     }
 
     @Test(priority = 8, groups = "UITest")
-    public void changeBoardName(){
+    public void changeBoardName() throws InterruptedException {
         System.out.println("Поменять имя доски");
+        Thread.sleep(3000);
         webDriver.findElement(By.xpath("//div[@title = 'KanbanTool']")).click();
         webDriver.findElement(By.xpath("//div[@class = 'board-header-btn mod-board-name inline-rename-board js-rename-board']/h1")).click();
 
