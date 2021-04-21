@@ -6,7 +6,7 @@ public class DBManager {
     public static ResultSet connectToDB(String column) throws ClassNotFoundException, SQLException {
         Class.forName("org.postgresql.Driver");
         Connection con = DriverManager.getConnection(
-                "jdbc:postgresql://localhost:5432/TrelloTesting", "postgres", "5214250");
+                "jdbc:postgresql://localhost:5432/TrelloTesting", "postgres", "******");
         con.setAutoCommit(false);
         Statement stmt = con.createStatement();
 
